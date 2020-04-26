@@ -1,2 +1,2 @@
 # search_engine_2
-Search engine version 2 using map(string,root_of_BST)
+Search engine version 2 using map(keyword,root_of_BST)
