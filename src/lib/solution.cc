@@ -1,9 +1,11 @@
 #include "solution.h"
 #include <iostream>
+#include <regex>
+#include <algorithm>
 
 BST::~BST()
 {
-    TreeNode* apple_root_=nullptr;
+    TreeNode* apple_root_=nullptr;//delete
     TreeNode* analytics_root_=nullptr;
     TreeNode* fpga_root_=nullptr;
     TreeNode* iot_root_=nullptr;
@@ -17,7 +19,7 @@ BST::BST()
     TreeNode* iot_root_=nullptr;
 }
 
-bool BST::check_keyword(string& keyword,string& s)
+bool BST::check_keyword(string keyword,string s)
 {
   unordered_set<string> title_words;
   string word = ""; 
@@ -39,17 +41,40 @@ bool BST::check_keyword(string& keyword,string& s)
 
 void BST::map_keyword_to_bst(vector<string>& v) //for my local storage of titles 
 {
+  string title;
+  string url;
+  pair<string,pair<string,string>> p;
+  pair<string,string> p1;
+  for(auto i:v)
+  {
+	  regex regex("->");
+	  vector<string> out(
+					sregex_token_iterator(i.begin(), i.end(), regex, -1),
+					sregex_token_iterator()
+					);
+    if(int(out.size())==2) //avoids seg fault for blank lines or invalid lines with no regex 
+    {     
+      title=out[0];
+      url=out[1];
+      p1.first=title; //original 
+      p1.second=url;
+      transform(title.begin(),title.end(),title.begin(),::tolower);
+      p.first=title; //lowercase for removing case sensitivity while searching title
+      p.second=p1;
+      title_url.insert(p);
+    }
+  }
   keyword_root[vkeys[0]]=apple_root_;
   keyword_root[vkeys[1]]=analytics_root_;
   keyword_root[vkeys[2]]=fpga_root_;
   keyword_root[vkeys[3]]=iot_root_;
-  for(auto& s:v)
+  for(auto it=title_url.begin();it!=title_url.end();it++)
   {
-    for(int i=0;i<int(vkeys.size());i++)
+    for(int i=0;i<int(vkeys.size());i++) //check which keyword is in the title
     {
-      if(check_keyword(vkeys[i],s)) //title has keyword then add this title to the same index root bst
+      if(check_keyword(vkeys[i],(*it).first)) //title has keyword then add this title to the same index root bst
       {
-          insert(keyword_root[vkeys[i]],s); //use root for insert from map 
+          insert(keyword_root[vkeys[i]],(*it).first); //use root for insert from map 
       }
     }  
   }
@@ -78,6 +103,7 @@ else if (v > root->val) {
 
 bool BST::find(string v)
 {
+  transform(v.begin(),v.end(),v.begin(),::tolower);
   for(int i=0;i<int(vkeys.size());i++)
   {
     if(check_keyword(vkeys[i],v))
@@ -91,16 +117,18 @@ if (root == nullptr) {
   return false;
 }
 else if (root->val == v) {
-  results.push_back(root->val);
+  //results.push_back(title_url[root->val]);
+  results.clear();
+  results.push_back(title_url[root->val]); //only exact matching title returned as a result
   return true;
 }
 else if (v < root->val) {
-  results.push_back(root->val);
+  results.push_back(title_url[root->val]);
   return search(root->left, v);
 } 
 else // v > root->val
 {
-  results.push_back(root->val);
+  results.push_back(title_url[root->val]);
   return search(root->right, v);
 }
 }
