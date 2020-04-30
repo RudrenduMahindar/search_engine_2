@@ -19,7 +19,7 @@ TreeNode(string x) : val(x), left(NULL), right(NULL) {}
 class BST {
 public:
     BST();
-    BST(vector<string>& initial_values); // Inserts elements of initial_values one by one into the Tree
+    BST(vector<string>& initial_values); // Inserts titles of initial_values one by one into the Tree
     ~BST();
     void insert(TreeNode*&,string); // Inserts a key inside Tree
     bool search(TreeNode *,string v);
@@ -35,9 +35,7 @@ private:
     TreeNode* iot_root_=nullptr;
     vector<string> vkeys={"apple","analytics","fpga","iot"};
     unordered_map<string,TreeNode*> keyword_root;
-    unordered_map<string,pair<string,string>> title_url; //<lower,<orig,url>>
-    
+    unordered_map<string,pair<string,string>> title_url; //<lowercase,<originalcase,url>>
 };
-
 
 #endif

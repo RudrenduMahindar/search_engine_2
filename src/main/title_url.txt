@@ -1,7 +1,20 @@
+Apple watercore sorting system using X-ray imagery: I. Algorithm development->https://elibrary.asabe.org/abstract.asp?aid=3070
+DNA-free genetically edited grapevine and apple protoplast using CRISPR/Cas9 ribonucleoproteins->https://www.frontiersin.org/articles/10.3389/fpls.2016.01904/full
+Dyslexia and second language reading: A second bite at the apple?->https://link.springer.com/article/10.1023/A:1008009703641
 Enzymatic browning reactions in apple and apple products->https://www.tandfonline.com/doi/abs/10.1080/10408399409527653
 Apple phytochemicals and their health benefits->https://link.springer.com/article/10.1186/1475-2891-3-5
 Apple classrooms of tomorrow->http://wildej.pbworks.com/f/rpt08.pdf 
 Big data analytics->https://vivomente.com/wp-content/uploads/2016/04/big-data-analytics-white-paper.pdf
 Competing on analytics->http://www.impactline.net/%C0%DA%B7%E1%C3%B7%BA%CE%B9%B0/OLAPDW/AnalyticsHBR.pdf
 Penetrating the fog: Analytics in learning and education->https://eric.ed.gov/?id=EJ950794
-	
+Data science, predictive analytics, and big data: a revolution that will transform supply chain design and management->https://onlinelibrary.wiley.com/doi/full/10.1111/jbl.12010?casa_token=cyuYJm682k4AAAAA%3AgMKtOyKWrNzKuMvYgSPI_6vFlFYhg_ENqCP2scyF3dZYujg0ynXGeCpZ1ZDsTyW-nA7cyZyWuacrVw
+A review and future direction of agile, business intelligence, analytics and data science->https://www.sciencedirect.com/science/article/abs/pii/S026840121630233X
+Analytics in a big data world: The essential guide to data science and its applications->https://books.google.com/books?hl=en&lr=&id=9mZiAwAAQBAJ&oi=fnd&pg=PR13&dq=analytics+data+science&ots=0_iGihhBns&sig=9AYQ0NfSmoIC5DAjn2BF-voFh0Y#v=onepage&q=analytics%20data%20science&f=false
+Firm-core virtual FPGA for just-in-time FPGA compilation->https://www.researchgate.net/profile/Kees_Vissers/publication/221224541_Firm-core_Virtual_FPGA_for_Just-in-Time_FPGA_Compilation_abstract_only/links/5407a3aa0cf2c48563b81de3.pdf
+Optimizing fpga-based accelerator design for deep convolutional neural networks->https://dl.acm.org/doi/abs/10.1145/2684746.2689060
+Performance comparison of FPGA, GPU and CPU in image processing->https://ieeexplore.ieee.org/abstract/document/5272532
+FPGA implementations of fast Fourier transforms for real-time signal and image processing->https://digital-library.theiet.org/content/journals/10.1049/ip-vis_20041114	
+Internet of Things (IoT): A vision, architectural elements, and future directions->https://www.sciencedirect.com/science/article/abs/pii/S0167739X13000241
+The Internet of Things (IoT): Applications, investments, and challenges for enterprises->https://www.sciencedirect.com/science/article/pii/S0007681315000373
+IoT security: Review, blockchain solutions, and open challenges->https://www.sciencedirect.com/science/article/abs/pii/S0167739X17315765
+A vision of IoT: Applications, challenges, and opportunities with china perspective->https://ieeexplore.ieee.org/abstract/document/6851114
