@@ -27,7 +27,7 @@ int main()
     map<int,vector<pair<string,string>>> m=b.results;
 
     unordered_set<string> display_title; //record displayed titles here
-    for(auto it=m.rbegin();it!=m.rend();it++)
+    for(auto it=m.rbegin();it!=m.rend();it++) //highest ferquency match displayed first
     {
         for(auto it1:((*it).second))
         {
