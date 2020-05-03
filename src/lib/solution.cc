@@ -50,7 +50,7 @@ void Publication::map_keyword_to_bst(vector<string>& v) //for my dataset of titl
     {
       if(check_keyword(vkeys[i],(*it).first)) //title has keyword then add this title to the same index root bst
       {
-          insert(keyword_root[vkeys[i]],(*it).first); //use root for insert from map 
+          insert(keyword_root[vkeys[i]],(*it).first); //use tree root for that keyword from map 
       }
     }  
   }
@@ -61,7 +61,7 @@ Publication::Publication(vector<string>& initial_values) //insert titles from in
   for(int i=0;i<int(vkeys.size());i++) //each keyword needs a corresponding root in the map keyword_root
   {
     TreeNode* root=nullptr; //initialize to avoid seg fault
-    vroots.push_back(root); 
+    vroots.push_back(root); //push all roots here 
     keyword_root[vkeys[i]]=vroots[i]; //map keyword to root
   }
   map_keyword_to_bst(initial_values); //function to map keyword to bst-root and insert titles to their bst
@@ -81,7 +81,7 @@ else if (v > root->val) {
 
 bool Publication::find(string v)
 {
-  transform(v.begin(),v.end(),v.begin(),::tolower);
+  transform(v.begin(),v.end(),v.begin(),::tolower); //convert user input to lower case
   for(int i=0;i<int(vkeys.size());i++) //use all keywords to check which keyword is present in search title
   {
     if(check_keyword(vkeys[i],v)) //check pattern of keyword in title
@@ -92,7 +92,7 @@ bool Publication::find(string v)
       }
       else //exact match not found then insert other results from tree after close results
       {
-        append_others(keyword_root[vkeys[i]]); //insert other titles of this tree into results
+        append_others(keyword_root[vkeys[i]]); //insert other unvisited titles of this tree into results
       }
     }  
   }
@@ -122,18 +122,24 @@ bool Publication::search(TreeNode *root,string v) { //search title in BST
   }
 }
 
-void Publication::append_others(TreeNode* root) //insert unvisited titles in results 
+void Publication::append_others(TreeNode* root) //insert unvisited tree nodes (titles) in results 
 { 
   queue<TreeNode*> q;
   q.push(root);
   while(!q.empty())
   {
     TreeNode* node=q.front();
-    if(title_freq.find(node->val)==title_freq.end()) //title_freq does not have title, title not visited in tree
-    {
-      title_freq[node->val]++;
-      results[title_freq[node->val]].push_back(title_url[node->val]); //insert current title in result
-    }  
+    
+    title_freq[node->val]+= (1+(title_keyword_count[node->val])*2);//visiting this title more than once, this title should appear earlier in search results
+    //title freq adds +1 for current visit, +(offset*2) when this title is visited again for a different keyword
+    // *2 because for each keyword any title in the BST may at most be visited twice, once for first traversal in search(), second
+    //for traversal in append_others(), so a title which is being visited again for a different keyword has to cross this +2 
+    //frequency of some titles from the previously traversed BST, and cross +2 of titles currently traversed BST, so only
+    // +1 here to increment freq does not work correctly to display desired titles at the top
+    
+    results[title_freq[node->val]].push_back(title_url[node->val]); //insert title in result according to frequency
+    title_keyword_count[node->val]++; //visited title for this keyword, keep a count for next visit offset adjustment
+
     q.pop();
     if(node->left!=nullptr)
       q.push(node->left);

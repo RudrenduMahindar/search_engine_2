@@ -35,6 +35,8 @@ private:
     unordered_map<string,TreeNode*> keyword_root; //keyword mapped with root of tree
     unordered_map<string,pair<string,string>> title_url; //<lowercase,<originalcase,url>>
     unordered_map<string,int> title_freq;//title and its frequency 
+    unordered_map<string,int> title_keyword_count;//add offset to freq for visiting same title for multiple keywords
+
 };
 
 #endif
