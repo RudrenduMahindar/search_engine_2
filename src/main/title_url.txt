@@ -18,3 +18,7 @@ Internet of Things (IoT): A vision, architectural elements, and future direction
 The Internet of Things (IoT): Applications, investments, and challenges for enterprises->https://www.sciencedirect.com/science/article/pii/S0007681315000373
 IoT security: Review, blockchain solutions, and open challenges->https://www.sciencedirect.com/science/article/abs/pii/S0167739X17315765
 A vision of IoT: Applications, challenges, and opportunities with china perspective->https://ieeexplore.ieee.org/abstract/document/6851114
+Predictive analytics for enhancing travel time estimation in navigation apps of Apple, Google, and Microsoft->https://dl.acm.org/doi/abs/10.1145/3003965.3003976
+Deep learning for IoT big data and streaming analytics: A survey->https://ieeexplore.ieee.org/abstract/document/8373692
+Database analytics acceleration using FPGAs->https://ieeexplore.ieee.org/abstract/document/7842953
+A PUF-enabled secure architecture for FPGA-based IoT applications->https://ieeexplore.ieee.org/abstract/document/7303941

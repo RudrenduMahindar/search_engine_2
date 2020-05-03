@@ -20,16 +20,24 @@ int main()
     }
     else cout<<"unable to open file";
 
-    BST b(lines);
+    Publication b(lines);
     cout<<"Enter search title"<<endl;
     getline(cin,s);
     b.find(s)?cout<<"matching title found\n":cout<<"matching title not found\n";
-    vector<pair<string,string>> v=b.results;
+    map<int,vector<pair<string,string>>> m=b.results;
 
-    cout<<int(v.size())<<" close search results found"<<endl;
-    for(auto it=v.rbegin();it!=v.rend();it++)
+    unordered_set<string> display_title; //record displayed titles here
+    for(auto it=m.rbegin();it!=m.rend();it++)
     {
-        cout<<"Title : "<<(*it).first<<"  URL : "<<(*it).second<<endl;
+        for(auto it1:((*it).second))
+        {
+            if(!display_title.count((it1).first)) //title has not been displayed yet
+            {
+                cout<<"Title : "<<((it1).first)<<"  URL : "<<((it1).second)<<endl;
+                display_title.insert((it1).first);
+            }
+        }
+    
     }
     
     return EXIT_SUCCESS; 
