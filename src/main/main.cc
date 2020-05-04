@@ -13,7 +13,7 @@ int main()
     {
         while ( getline (myfile,s) )
         {
-            cout<<s<<endl;
+           // cout<<s<<endl; //prints each line of your dataset
             lines.push_back(s);
         }
     myfile.close();
