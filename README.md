@@ -14,11 +14,12 @@ After the installation of visual studio code and bazel is complete follow the st
 git clone https://github.com/RudrenduMahindar/search_engine_2.git 
 
 ## 2. Build and run this project in Visual Studio Code
-### Open Visual Studio Code
-### Click on File->Open Folder, select the folder of search_engine_2 and open it
-### Click on Terminal->New Terminal
+#### Open Visual Studio Code
+#### In the top menubar of Visual Studio Code, click on File->Open Folder, select the folder of search_engine_2 and open it
+#### In the top menubar of Visual Studio Code, click on Terminal->New Terminal
 After the terminal opens, type:
-### bazel run src/main:main
+#### bazel run src/main:main
+Enjoy!!
 
 
 
