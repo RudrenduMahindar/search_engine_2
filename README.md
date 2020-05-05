@@ -11,12 +11,12 @@ Try out this c++ search engine by installing Bazel and Visual Studio Code (prefe
 For building C++ files, you can install Bazel using this [link](https://docs.bazel.build/versions/master/install.html).
 After the installation of visual studio code and bazel is complete follow the steps below:
 ## 1. Clone this repo:
-### git clone 
+git clone https://github.com/RudrenduMahindar/search_engine_2.git 
 
 ## 2. Build and run this project in Visual Studio Code
-Open Visual Studio Code
-Click on File->Open Folder, select the folder of search_engine_2 and open it
-Click on Terminal->New Terminal
+### Open Visual Studio Code
+### Click on File->Open Folder, select the folder of search_engine_2 and open it
+### Click on Terminal->New Terminal
 After the terminal opens, type:
 ### bazel run src/main:main
 
