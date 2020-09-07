@@ -13,8 +13,8 @@ Publication::~Publication() //delete tree roots here
 bool Publication::check_keyword(string keyword,string s)
 {
   size_t pos = s.find(keyword); // search for the keyword pattern in the title
-	if(pos != string::npos)
-    return true;
+  if(pos != string::npos)
+	  return true;
   return false; 
 }
 
